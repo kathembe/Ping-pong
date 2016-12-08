@@ -1,23 +1,37 @@
-var pingpong = function() {
-  var userInput = prompt("input any number")
-  var display = [];
+//business interface
+var display = [];
+var pingpong=function(userInput){
   for (n= 1;n<= userInput;n++){
   display.push(n)
   }
-
   for(index=0;index<=display.length;index++){
-    if(display[index]%3 === 0) {
-      display.splice(index, 1, "ping");
-    }else if(display[index]%5 === 0) {
-      display.splice(index, 1, "pong");
-    }else if(display[index]%15 === 0) {
-      display.splice(index, 1, "ping-pong");
-    };
-  document.write(display);
-  };
+    if(display[index]%15 === 0) {
+    display[index] = "ping pong"
+    }else{
+      if (display[index]%3 === 0) {
+      display[index] = "ping";
+    }
+        if (display[index]%5 === 0) {
+      display[index] = "pong";
+    }
+    }
+   }
+  return display;
+};
 
-  $(document).ready(function() {
-    $("#result").submit(function(event) {
-      event.preventDefault();
-      pingpong()
+
+
+
+
+//userinterface
+$(document).ready(function() {
+  $("#formation").submit(function(event) {
+    event.preventDefault();
+
+    var userInput = parseInt($("input#firstnumber").val());
+    var result = pingpong(userInput);
+    result.forEach(function(index){
+      $(".show-result ul").append("<li class='index'>"+index+"</li>");
     });
+  });
+});

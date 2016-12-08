@@ -1,26 +1,56 @@
 <!DOCTYPE html>
   <html>
     <head>
+      <title>Let's play</title>
       <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
       <link href="css/styles.css" rel="stylesheet" type="text/css">
-      <script src="js/jquery-3.1.1.js"></script>
+      <script src="js/jquery-3.1.1.min.js"></script>
       <script src="js/scripts.js"></script>
-      <title>Let's play</title>
+
     </head>
+
     <body>
-      <div class="container">
-        <h1>Ping Pong</h1>
+      <div class="body">
+        <div class="head">
+          <h1>Ping Pong</h1>
+        </div>
 
-
-          <div>
-            <input type="text" id="userinput"/>
-            <input type="button" id="try" value="run" onClick="pingpong()"/>
-            </form>
+        <div class="main">
+          <div class="aboutpp">
+            <h2>About Ping Pong</h2>
+            <div>
+              <h3>Created by:</h3>
+              <p class="cname">Simon Kathembe</p>
+              <h3>Github Username</h3>
+              <p class="gun">Kathembe</p>
+            </div>
           </div>
-
-        <div id="result">
+          <div class="playtime">
+            <div class="instructions">
+              <h2>Let's play!</h2>
+              <p>Ping Pong will count upto your number from 1 with the following excempytions:
+                <ul>
+                  <li>Numbers divisible by 3 become "ping"</li>
+                  <li>Numbers divisible by 5 become "pong"</li>
+                  <li>Numbers divisible by 15 become "pingpong"</li>
+                </ul>
+              </p>
+            </div>
+            <div class="inputform">
+              <form id="formation">
+                Enter your number here:
+                <label for="number"></label>
+                <input type="number" id="firstnumber"><br>
+                <button type="submit" class="Submit">submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="show-result">
+          <ul class="show-numbers"></ul>
 
         </div>
       </div>
+
     </body>
   </html>
